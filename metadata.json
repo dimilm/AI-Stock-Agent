@@ -1,0 +1,5 @@
+{
+  "name": "KI Aktien-Analyse-Agent",
+  "description": "Ein KI-gestützter Agent, der Aktien nach benutzerdefinierten Kriterien vergleicht und die Top-5-Picks mit detaillierter Analyse und Kennzahlen anzeigt.",
+  "requestFramePermissions": []
+}
