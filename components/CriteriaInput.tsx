@@ -31,7 +31,7 @@ export const CriteriaInput: React.FC<CriteriaInputProps> = ({ criteria, setCrite
       <button
         onClick={onAnalyze}
         disabled={isLoading || !criteria.trim()}
-        className="absolute top-1/2 right-4 transform -translate-y-1/2 flex items-center justify-center gap-2 px-4 py-2 bg-blue-600 text-white font-semibold rounded-lg shadow-md hover:bg-blue-700 disabled:bg-gray-600 disabled:cursor-not-allowed focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-blue-500 transition-all duration-200"
+        className="absolute bottom-4 right-4 flex items-center justify-center gap-2 px-4 py-2 bg-blue-600 text-white font-semibold rounded-lg shadow-md hover:bg-blue-700 disabled:bg-gray-600 disabled:cursor-not-allowed focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-blue-500 transition-all duration-200"
       >
         <SearchIcon className="w-5 h-5" />
         {isLoading ? 'Analysiere...' : 'Analysieren'}

@@ -1,4 +1,5 @@
 import React from 'react';
+import { AutocompleteSelect } from './AutocompleteSelect';
 
 interface FilterControlsProps {
   country: string;
@@ -47,46 +48,24 @@ const countries = [
 ];
 const industries = ['Alle Branchen', 'Technologie', 'Security', 'Gesundheitswesen', 'Finanzen', 'Industrie', 'Konsumgüter (zyklisch)', 'Konsumgüter (nicht-zyklisch)', 'Energie', 'Rohstoffe', 'Immobilien'];
 
-const SelectInput: React.FC<{
-  label: string, 
-  value: string, 
-  onChange: (e: React.ChangeEvent<HTMLSelectElement>) => void,
-  options: string[],
-  disabled: boolean
-}> = ({ label, value, onChange, options, disabled }) => (
-  <div className="flex-1">
-    <label htmlFor={label} className="block text-sm font-medium text-gray-400 mb-1">{label}</label>
-    <select
-      id={label}
-      value={value}
-      onChange={onChange}
-      disabled={disabled}
-      className="w-full p-2 bg-gray-800 border-2 border-gray-700 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-all duration-200 text-gray-200 disabled:opacity-50"
-    >
-      {options.map(option => (
-        <option key={option} value={option}>{option}</option>
-      ))}
-    </select>
-  </div>
-);
-
-
 export const FilterControls: React.FC<FilterControlsProps> = ({ country, setCountry, industry, setIndustry, isLoading }) => {
   return (
     <div className="flex flex-col sm:flex-row gap-4 mb-4">
-      <SelectInput 
+      <AutocompleteSelect 
         label="Land"
         value={country}
-        onChange={(e) => setCountry(e.target.value)}
+        onChange={setCountry}
         options={countries}
         disabled={isLoading}
+        placeholder="Land suchen..."
       />
-       <SelectInput 
+       <AutocompleteSelect 
         label="Branche"
         value={industry}
-        onChange={(e) => setIndustry(e.target.value)}
+        onChange={setIndustry}
         options={industries}
         disabled={isLoading}
+        placeholder="Branche suchen..."
       />
     </div>
   );
